@@ -1,0 +1,15 @@
+<html>
+<head>
+<title> View Image </title>
+</head>
+<body>
+{% for message in messages %}
+<strong>Message: </strong>{{ message }}
+{% endfor %}
+
+{% for e in images %}
+<img src="{{e.Picture.url}}" width="500" height="400">
+<a href="{{e.Picture.url}}">view</a>
+<a href="/delete/{{e.pic_id}}">Delete</a>
+{% endfor %}
+</body>

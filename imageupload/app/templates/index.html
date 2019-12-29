@@ -1,0 +1,12 @@
+<html>
+<head>
+<title> View Image </title>
+</head>
+<body>
+
+<form action="/login/" method="POST">{% csrf_token %}
+<input type="text" name="user">
+<input type="password" name="password">
+<input type="submit" value="Submit">
+</form>
+</body>

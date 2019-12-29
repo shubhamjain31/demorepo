@@ -1,0 +1,19 @@
+<html>
+<head>
+<title> Upload Image </title>
+</head>
+<body>
+{% for message in messages %}
+<strong>Message: </strong>{{ message }}
+{% endfor %}
+
+<form action="/upload/" method="POST" enctype="multipart/form-data">{% csrf_token %}
+<input type="file" name="picture">
+
+<button type='submit'>Upload</button>
+
+<a href="/showimage/"> Show </a>
+
+<a href="/logout/">Logout</a>
+</form>
+</body>
