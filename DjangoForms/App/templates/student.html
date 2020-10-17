@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Student Form</title>
+  </head>
+  
+  <!-- !st Way -->
+  <!-- <body>
+  	<div class="container w-50 mx-auto">
+		<h1 class="text-center">Student Form</h1>
+		<form method="post" action="">{% csrf_token %}
+			<div>
+				{{form.as_p}}
+			</div>
+			<button type="submit" class="btn btn-success">Submit</button>
+		</form>
+	</div> -->
+
+	<!-- 2nd Way -->
+	<div class="container w-50 mx-auto mt-2">
+		<h1 class="text-center">Student Form</h1>
+		<form method="post" action="">{% csrf_token %}
+			<div class="form-group row">
+				<label class="col-sm-2 col-form-label col-form-label-sm">Name</label>
+				<div class="col-sm-8">
+					{{form.name}}
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-sm-2 col-form-label col-form-label-sm">Email Id</label>
+				<div class="col-sm-8">
+					{{form.emailid}}
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-sm-2 col-form-label col-form-label-sm">City</label>
+				<div class="col-sm-8">
+					{{form.city}}
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-sm-2 col-form-label col-form-label-sm">Marks</label>
+				<div class="col-sm-8">
+					{{form.marks}}
+				</div>
+			</div>
+			<div class="text-center">
+				<button type="submit" class="btn btn-success ">Submit</button>
+			</div>
+		</form>
+	</div>
+
+	<div class="container mt-5">
+		<table class="table table-bordered">
+		  <thead>
+		    <tr>
+		      <th scope="col">Name</th>
+		      <th scope="col">Email</th>
+		      <th scope="col">City</th>
+		      <th scope="col">Marks</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		  	{% for i in data %}
+		    <tr>
+		      <td>{{i.name}}</td>
+		      <td>{{i.emailid}}</td>
+		      <td>{{i.city}}</td>
+		      <td>{{i.marks}}</td>
+		    </tr>
+		    {% endfor %}
+		  </tbody>
+		</table>
+	</div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
