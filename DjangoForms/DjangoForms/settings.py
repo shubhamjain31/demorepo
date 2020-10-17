@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 #Note: install - pip install django-allauth
+#Note: for create api key - https://console.developers.google.com/
 
 from pathlib import Path
 from DjangoForms.secret_settings import *
