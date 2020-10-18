@@ -1,0 +1,51 @@
+----------------------------------------------Heroku Steps and Requirements----------------------------------------
+
+
+								------------------- Steps ----------------------
+
+a) git init
+b) heroku git:remote -a demoappshubham
+	here, demoappshubham is a heroku app name
+
+c) git remote -v					#to confirm working project
+d) git add .
+e) git commit -m "Initial Commit"
+f) git push heroku master
+
+g) heroku login                      #cheching heroku installation on cli
+
+h) heroku logs --tail                #checking heroku logs when error comes
+
+i) For database configurations
+	i) heroku run python manage.py makemigrations
+	ii) heroku run python manage.py migrate
+	iii) heroku run python manage.py createsuperuser
+
+
+
+							--------------------- Requirements ----------------------
+
+-> Download git and Heroku cli
+-> Add buildpacks in setting tab in heroku website
+
+-> install using pip
+	1) pip install django_heroku
+    2) pip install gunicorn
+    3) pip install django_heroku whitenoise
+
+-> In setting.py file setup for heroku is:
+	i) import django_heroku
+	ii) ALLOWED_HOSTS = ['*'] 
+	iii) MIDDLEWARE = [		......Default middlewares.....
+				  'whitenoise.middleware.WhiteNoiseMiddleware',
+				  ]
+	iv) django_heroku.settings(locals())           #Activate Django-Heroku.
+
+	v) STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+	vi) STATICFILES_DIRS = (os.path.join(BASE_DIR, 'App/static'),)
+	vii) STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'		#for static files
+
+-> Create a Procfile file in root directory of project where manage.py file exist
+	web: gunicorn <project_folder_name>.wsgi --log-file -
+
+-> create a requirements.txt file in root directory of project where manage.py file exist
