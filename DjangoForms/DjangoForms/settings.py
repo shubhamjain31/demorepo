@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 #Note: install - pip install django-allauth
-#Note: for create api key - https://console.developers.google.com/
 
 from pathlib import Path
 from DjangoForms.secret_settings import *
@@ -41,10 +40,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'App',
 
+    #allauth
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+
+    #providers
     'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.facebook',
 ]
 
 MIDDLEWARE = [
@@ -139,3 +142,12 @@ AUTHENTICATION_BACKENDS = [
 SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/'
+
+SOCIALACCOUNT_PROVIDERS =  { 'facebook':
+                               {'METHOD': 'oauth2',
+                                'SCOPE': ['email'],
+                                'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
+                                'LOCALE_FUNC': lambda request: 'en_US',
+                                'VERSION': 'v2.4'
+                               }
+                           }

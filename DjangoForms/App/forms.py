@@ -105,6 +105,8 @@ class UserForm(forms.ModelForm):
 
 	def clean_confirm_password(self):
 		MIN_LENGTH = 8
+		pas = self.cleaned_data['password']
+		cpas = self.cleaned_data['confirm_password']
 		print(pas,cpas)
 		if pas and cpas:
 			if pas != cpas:
