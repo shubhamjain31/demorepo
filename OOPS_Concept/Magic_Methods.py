@@ -13,6 +13,7 @@ class Employee:
         print('Name of Employee is {} {}'.format(self.fname ,self.lname))
         print('Salary of Employee is {}'.format(self.salary))
 
+    #Magic methods Or Dunder methods
     def __add__(self, other):
         return self.salary + other.salary
 
