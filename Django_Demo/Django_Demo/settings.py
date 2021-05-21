@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'App'
+    'App',
+    "pinax.templates"
 ]
 
 MIDDLEWARE = [
@@ -58,7 +59,7 @@ ROOT_URLCONF = 'Django_Demo.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -103,6 +104,15 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+# EMAIL_HOST_USER = 'exfi@iwcnetwork.com'
+# EMAIL_HOST_PASSWORD = 'SKYFALL&*^'
+
+EMAIL_HOST_USER = 'sj27754@gmail.com'
+EMAIL_HOST_PASSWORD = 'YOUR PASSWORD'
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
@@ -126,3 +136,6 @@ STATIC_URL = '/static/'
 # For download sourcery
 # https://sourcery.ai/?utm_source=YouTube&utm_medium=aff&utm_campaign=codekeen
 # https://autocomplete.trevoreyre.com/#/
+
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
