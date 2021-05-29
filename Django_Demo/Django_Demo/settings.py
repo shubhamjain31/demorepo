@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'elfp4*pqo7kew0mfpap$%4+p@t+4(c+&o41@5&o@y_4y*@oly!'
+SECRET_KEY = 'ka@#8z7r35%it-o7%epl6uk8n@#wllxo^m@+j#jrs7unt3h@u+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -30,6 +30,7 @@ ALLOWED_HOSTS = []
 
 FIXTURE_DIRS = (os.path.join(BASE_DIR, 'fixtures'),)
 
+AUTH_USER_MODEL = 'App.User'
 
 # Application definition
 
@@ -59,7 +60,7 @@ ROOT_URLCONF = 'Django_Demo.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
