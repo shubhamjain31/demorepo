@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'channels',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -70,6 +71,10 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'Django_thread.wsgi.application'
+
+
+# Channels settings
+ASGI_APPLICATION = "Django_thread.asgi.application"
 
 CHANNEL_LAYERS = {
     "default": {
