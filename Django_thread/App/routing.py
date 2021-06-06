@@ -5,5 +5,6 @@ from . import consumer
 
 websocket_urlpatterns = [
     # re_path(r'ws/test/', consumers.TestConsumer)
-    path('ws/test/', consumer.TestConsumer.as_asgi())
+    path('ws/test/', consumer.TestConsumer.as_asgi()),
+    path('ws/new/', consumer.NewConsumer.as_asgi())
 ]
