@@ -16,11 +16,10 @@ class TestConsumer(WebsocketConsumer):
 			)
 		
 		self.accept()
-		self.send(text_data=json.dumps({'status':'connected from test Consumers'}))
+		self.send(text_data = json.dumps({'status':'connected from test Consumers'}))
 
 	def receive(self, text_data):
-		print(text_data)
-		self.send(text_data=json.dumps({'status':'we got it'}))
+		self.send(text_data = json.dumps({'status':'we got it'}))
 
 	def disconnect(self,  *args, **kwargs):
 		print('disconnected')
@@ -41,15 +40,14 @@ class NewConsumer(AsyncJsonWebsocketConsumer):
 			)
 
 		await self.accept()
-		await self.send(text_data=json.dumps({'status':'connected from New Consumers'}))
+		await self.send(text_data = json.dumps({'status':'connected from New Consumers'}))
 
 	async def receive(self, text_data):
-		print(text_data)
-		await self.send(text_data=json.dumps({'status':'we got it'}))
+		await self.send(text_data = json.dumps({'status':'we got it'}))
 
-	async def disconnect(self,  *args, **kwargs):
+	async def disconnect(self, *args, **kwargs):
 		print('disconnected')
 
 	async def send_notification(self, event):
 		data = json.loads(event.get('value'))
-		await self.send(text_data=json.dumps({'payload':data}))
+		await self.send(text_data = json.dumps({'payload':data}))

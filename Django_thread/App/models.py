@@ -34,8 +34,10 @@ class Notifications(models.Model):
 
     def save(self, *args, **kwargs):
         channel_layer = get_channel_layer()
+        
         notification_obj = Notifications.objects.filter(is_seen=False).count()
         data = {'count':notification_obj, 'current_notification':self.notifications}
+        
         async_to_sync(channel_layer.group_send)(
             'test_consumer_group', {
             'type':'send_notification',
