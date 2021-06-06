@@ -1,6 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+from channels.layers import get_channel_layer
+from asgiref.sync import async_to_sync
+import json
+
 # Create your models here.
 
 class Informations(models.Model):
@@ -25,4 +29,16 @@ class Notifications(models.Model):
     is_seen 			= models.BooleanField(default=False)
     
     def __str__(self):
-        return self.student_name
+        return str(self.user)
+
+
+    def save(self, *args, **kwargs):
+        channel_layer = get_channel_layer()
+        notification_obj = Notifications.objects.filter(is_seen=False).count()
+        data = {'count':notification_obj, 'current_notification':self.notifications}
+        async_to_sync(channel_layer.group_send)(
+            'test_consumer_group', {
+            'type':'send_notification',
+            'value':json.dumps(data)
+            })
+        super(Notifications, self).save(*args, **kwargs)

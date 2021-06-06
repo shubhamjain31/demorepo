@@ -74,15 +74,15 @@ WSGI_APPLICATION = 'Django_thread.wsgi.application'
 
 
 # Channels settings
-ASGI_APPLICATION = "Django_thread.asgi.application"
+ASGI_APPLICATION = "Django_thread.routing.application"
 
 CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
             "hosts": [("127.0.0.1", 6379)],
-            'capacity': 2000,
-            'expiry': 10,
+            # 'capacity': 2000,
+            # 'expiry': 10,
         },
     },
 }
@@ -149,3 +149,8 @@ STATICFILES_DIR = {
 
 MEDIA_ROOT =  os.path.join(BASE_DIR, 'static') 
 MEDIA_URL = '/media/'
+
+
+# Testing things:
+# https://websocketking.com/
+# ws://localhost:8000/ws/test/
