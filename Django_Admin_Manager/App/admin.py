@@ -2,6 +2,9 @@ from django.contrib import admin
 from .models import *
 from django.utils.html import format_html
 
+from import_export import resources
+from import_export.admin import ImportExportModelAdmin
+
 admin.site.site_header  =  "Custom Blog Admin"  
 admin.site.site_title  =  "Custom Blog Admin Site"
 admin.site.index_title  =  "Custom Blog Admin"
@@ -40,5 +43,9 @@ class BlogAdmin(admin.ModelAdmin):
 		return format_html(f'<img src="/media/{obj.image}" style="height:100px;width:100px;">')
 
 
-admin.site.register(Category)
+@admin.register(Category)
+class CategoryAdmin(ImportExportModelAdmin):
+	pass
+	
+# admin.site.register(Category)
 admin.site.register(Blog, BlogAdmin)
