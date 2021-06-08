@@ -42,6 +42,8 @@ class BlogAdmin(admin.ModelAdmin):
 	def photo_tag(self, obj):
 		return format_html(f'<img src="/media/{obj.image}" style="height:100px;width:100px;">')
 
+	change_list_template = 'admin/App/blog/change_list_graph.html'
+
 
 @admin.register(Category)
 class CategoryAdmin(ImportExportModelAdmin):
