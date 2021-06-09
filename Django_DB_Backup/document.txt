@@ -1,0 +1,15 @@
+// Simple data dump command
+python3 manage.py dumpdata
+
+
+// data dump command with intent data
+python3 manage.py dumpdata --indent 4 > db.json
+
+// data dump of particular application(here blog is app)
+python3 manage.py dumpdata blog > db.json
+
+// data dump of particular application(here Post is model name)
+python3 manage.py dumpdata blog.Post >  db.json
+
+// data dump of particular application with indent
+python3 manage.py dumpdata --indent 4 blog.Post >  db.json
