@@ -13,3 +13,9 @@ python3 manage.py dumpdata blog.Post >  db.json
 
 // data dump of particular application with indent
 python3 manage.py dumpdata --indent 4 blog.Post >  db.json
+
+// data dump with natural keys
+python3 manage.py dumpdata --natural-foreign --natural-primary -e contenttypesm -e auth_permission --indent 4 > db.json
+
+// loaddata command
+python3 manage.py loaddata
