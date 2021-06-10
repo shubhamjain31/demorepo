@@ -1,0 +1,85 @@
+[
+{
+    "model": "App.category",
+    "pk": 1,
+    "fields": {
+        "name": "Watch"
+    }
+},
+{
+    "model": "App.category",
+    "pk": 2,
+    "fields": {
+        "name": "Car"
+    }
+},
+{
+    "model": "App.category",
+    "pk": 3,
+    "fields": {
+        "name": "Food"
+    }
+},
+{
+    "model": "App.category",
+    "pk": 4,
+    "fields": {
+        "name": "Shoes"
+    }
+},
+{
+    "model": "App.post",
+    "pk": 1,
+    "fields": {
+        "category": 1,
+        "title": "Titan",
+        "excerpt": "first",
+        "content": "This is my watch",
+        "author": 1
+    }
+},
+{
+    "model": "App.post",
+    "pk": 2,
+    "fields": {
+        "category": 2,
+        "title": "DUcati",
+        "excerpt": "second",
+        "content": "This is second post",
+        "author": 3
+    }
+},
+{
+    "model": "App.post",
+    "pk": 3,
+    "fields": {
+        "category": 4,
+        "title": "Lakhani",
+        "excerpt": "third",
+        "content": "this is another post",
+        "author": 3
+    }
+},
+{
+    "model": "App.post",
+    "pk": 4,
+    "fields": {
+        "category": 3,
+        "title": "Fast Food",
+        "excerpt": "four",
+        "content": "This is for food lovers",
+        "author": 2
+    }
+},
+{
+    "model": "App.post",
+    "pk": 5,
+    "fields": {
+        "category": 3,
+        "title": "Snacks",
+        "excerpt": "again",
+        "content": "this is new post",
+        "author": 1
+    }
+}
+]

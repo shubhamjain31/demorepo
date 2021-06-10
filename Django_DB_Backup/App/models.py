@@ -17,4 +17,11 @@ class Post(models.Model):
 	author 			= models.ForeignKey(User, on_delete = models.CASCADE, related_name = 'blog_name')
 
 	def __str__(self):
-		return self.title		
+		return self.title	
+
+class Description(models.Model):
+	content 		= models.TextField()
+	post_desc 		= models.ForeignKey(User, on_delete = models.CASCADE)
+
+	def __str__(self):
+		return self.content		
