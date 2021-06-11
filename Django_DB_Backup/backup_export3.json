@@ -1,0 +1,81 @@
+[
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$216000$npovMElhgAN9$NsIHytAx99ikSS/pdqnpa1G0pciE1OmXsvOKgvNUyU8=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "sarthak31",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2021-06-09T16:18:11.302Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "App.post",
+    "pk": 24,
+    "fields": {
+        "category": 1,
+        "title": "hfdfhdfh",
+        "excerpt": "wewek",
+        "content": "kwkwke",
+        "author": [
+            "sarthak31"
+        ]
+    }
+},
+{
+    "model": "App.post",
+    "pk": 21,
+    "fields": {
+        "category": 3,
+        "title": "Fast Food",
+        "excerpt": "four",
+        "content": "This is for food lovers",
+        "author": [
+            "sarthak31"
+        ]
+    }
+},
+{
+    "model": "App.post",
+    "pk": 22,
+    "fields": {
+        "category": 1,
+        "title": "2020",
+        "excerpt": "dwhdhwhdh",
+        "content": "hwewweh",
+        "author": [
+            "sarthak31"
+        ]
+    }
+},
+{
+    "model": "App.post",
+    "pk": 23,
+    "fields": {
+        "category": 1,
+        "title": "2022",
+        "excerpt": "dqwddw",
+        "content": "ewewe",
+        "author": [
+            "sarthak31"
+        ]
+    }
+},
+{
+    "model": "App.description",
+    "pk": 4,
+    "fields": {
+        "content": "this is sarthak description",
+        "post_desc": [
+            "sarthak31"
+        ]
+    }
+}
+]
