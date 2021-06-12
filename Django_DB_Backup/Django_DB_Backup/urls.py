@@ -20,6 +20,7 @@ from App import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
+    path('dbtable/', views.dbtable, name='dbtable'),
     path('create_backup/', views.create_backup, name='create_backup'),
     path('restore_backup/', views.restore_backup, name='restore_backup')
 ]

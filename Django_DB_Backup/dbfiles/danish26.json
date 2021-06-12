@@ -1,0 +1,45 @@
+[
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$216000$bDyA3WpkCesw$9piCy5Ka+MTgqD4BE+sNMYWScmGjUfhsnuXmKvMV3yw=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "danish26",
+        "first_name": "Mohammad",
+        "last_name": "Danish",
+        "email": "danish26@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2021-06-09T16:18:35Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "App.post",
+    "pk": 2,
+    "fields": {
+        "category": 2,
+        "title": "DUcati",
+        "excerpt": "second",
+        "content": "This is second post",
+        "author": [
+            "danish26"
+        ]
+    }
+},
+{
+    "model": "App.post",
+    "pk": 3,
+    "fields": {
+        "category": 4,
+        "title": "Lakhani",
+        "excerpt": "third",
+        "content": "this is another post",
+        "author": [
+            "danish26"
+        ]
+    }
+}
+]
