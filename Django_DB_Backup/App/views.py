@@ -60,8 +60,8 @@ def restore_backup(request):
 	user_obj = User.objects.get(pk=_pk)
 
 	# # delete all relation of user object
-	# Post.objects.filter(author=user_obj).delete()
-	# Description.objects.filter(post_desc=user_obj).delete()
+	Post.objects.filter(author=user_obj).delete()
+	Description.objects.filter(post_desc=user_obj).delete()
 
 	#file name
 	filename = "dbfiles/{}.json".format(user_obj.username)
