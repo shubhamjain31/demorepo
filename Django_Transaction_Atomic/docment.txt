@@ -1,0 +1,1 @@
+A transaction is an atomic set of database queries. These functions take a using argument which should be the name of a database. If it isn’t provided, Django uses the “default” database. Django will refuse to commit or to rollback when an atomic() block is active because that would break atomicity.
