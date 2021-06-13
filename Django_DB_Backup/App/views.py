@@ -47,25 +47,29 @@ def create_backup(request):
 		# s = re.sub('"pk": [0-9]{1,5}', '"pk": null', s)
 		f.write(s)
 
-	# delete all relation of user object
-	# Post.objects.filter(author=user).delete()
-	# Description.objects.filter(post_desc=user).delete()
-
-	# response = HttpResponse(s, content_type='application/json')
-	# response['Content-Disposition'] = 'attachment; filename=export.json'
-	# return response
 	data = {
         'msg': 'Backup Created Successfully'
     }
 	return JsonResponse(data)
 
-
+@csrf_exempt
 def restore_backup(request):
+	_pk = request.POST.get('_id')
 
-	# file name
-	filename = 'dbfiles/backup_export3'
+	# user object
+	user_obj = User.objects.get(pk=_pk)
+
+	# delete all relation of user object
+	Post.objects.filter(author=user_obj).delete()
+	Description.objects.filter(post_desc=user_obj).delete()
+
+	#file name
+	filename = "dbfiles/{}.json".format(user_obj.username)
 
 	# use call command for restore a data
 	call_command('loaddata', '{}'.format(filename))
 
-	return HttpResponse('DOne')
+	data = {
+        'msg': 'Restore Backup Successfully'
+    }
+	return JsonResponse(data)

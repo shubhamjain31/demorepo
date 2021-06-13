@@ -81,10 +81,10 @@
                     <!-- <a href="/edit/contact/'+str(item['id'])+'"><i class="fa fa-edit mx-2" title="Edit Client"></i></a> -->
                     <div class="row">
                       <div class="col-md-6">
-                        <a href="javascript:void(0);" class="btn btn-primary btn-sm user_status" id="user_status'{{user.pk}}'" onclick="return user_backup('{{user.pk}}');">Backup</a>
+                        <a href="javascript:void(0);" class="btn btn-primary btn-sm user_status" id="user_backup'{{user.pk}}'" onclick="return user_backup('{{user.pk}}');">Backup</a>
                       </div>
                       <div class="col-md-6">
-                        <a href="javascript:void(0);" class="btn btn-success btn-sm user_status" id="user_status'{{user.pk}}'" onclick="return user_status_update('{{user.pk}}');">Restore</a>
+                        <a href="javascript:void(0);" class="btn btn-success btn-sm user_status" id="user_restore_backup'{{user.pk}}'" onclick="return user_restore_backup('{{user.pk}}');">Restore</a>
                       </div>
                     </div>
                   </td>

@@ -41,5 +41,15 @@
             "danish26"
         ]
     }
+},
+{
+    "model": "App.description",
+    "pk": 5,
+    "fields": {
+        "content": "This is sarthak jain post",
+        "post_desc": [
+            "danish26"
+        ]
+    }
 }
 ]
