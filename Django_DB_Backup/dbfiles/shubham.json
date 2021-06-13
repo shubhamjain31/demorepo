@@ -1,0 +1,729 @@
+[
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$216000$4T8V8kpWVuyP$s9h+suA0sWPWTP4snZ/M1g9peDzBSXQIX7LqJxA6WLE=",
+        "last_login": "2021-06-13T06:31:44.915Z",
+        "is_superuser": true,
+        "username": "shubham",
+        "first_name": "Shubham",
+        "last_name": "Jain",
+        "email": "sj27754@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2021-06-09T16:14:55Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+        "action_time": "2021-06-09T16:17:00.477Z",
+        "user": [
+            "shubham"
+        ],
+        "content_type": [
+            "App",
+            "category"
+        ],
+        "object_id": "1",
+        "object_repr": "Watch",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+        "action_time": "2021-06-09T16:17:07.099Z",
+        "user": [
+            "shubham"
+        ],
+        "content_type": [
+            "App",
+            "category"
+        ],
+        "object_id": "2",
+        "object_repr": "Car",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+        "action_time": "2021-06-09T16:17:24.779Z",
+        "user": [
+            "shubham"
+        ],
+        "content_type": [
+            "App",
+            "category"
+        ],
+        "object_id": "3",
+        "object_repr": "Food",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+        "action_time": "2021-06-09T16:17:47.754Z",
+        "user": [
+            "shubham"
+        ],
+        "content_type": [
+            "App",
+            "category"
+        ],
+        "object_id": "4",
+        "object_repr": "Shoes",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+        "action_time": "2021-06-09T16:18:11.373Z",
+        "user": [
+            "shubham"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "2",
+        "object_repr": "sarthak31",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+        "action_time": "2021-06-09T16:18:35.181Z",
+        "user": [
+            "shubham"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "3",
+        "object_repr": "danish6",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+        "action_time": "2021-06-09T16:19:33.945Z",
+        "user": [
+            "shubham"
+        ],
+        "content_type": [
+            "App",
+            "post"
+        ],
+        "object_id": "1",
+        "object_repr": "Titan",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+        "action_time": "2021-06-09T16:20:18.862Z",
+        "user": [
+            "shubham"
+        ],
+        "content_type": [
+            "App",
+            "post"
+        ],
+        "object_id": "2",
+        "object_repr": "DUcati",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+        "action_time": "2021-06-09T16:21:01.141Z",
+        "user": [
+            "shubham"
+        ],
+        "content_type": [
+            "App",
+            "post"
+        ],
+        "object_id": "3",
+        "object_repr": "Lakhani",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+        "action_time": "2021-06-09T16:21:11.337Z",
+        "user": [
+            "shubham"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "3",
+        "object_repr": "danish26",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Username\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+        "action_time": "2021-06-09T16:21:48.686Z",
+        "user": [
+            "shubham"
+        ],
+        "content_type": [
+            "App",
+            "post"
+        ],
+        "object_id": "4",
+        "object_repr": "Fast Food",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+        "action_time": "2021-06-09T16:22:23.979Z",
+        "user": [
+            "shubham"
+        ],
+        "content_type": [
+            "App",
+            "post"
+        ],
+        "object_id": "5",
+        "object_repr": "Snacks",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+        "action_time": "2021-06-09T16:17:00.477Z",
+        "user": [
+            "shubham"
+        ],
+        "content_type": [
+            "App",
+            "category"
+        ],
+        "object_id": "1",
+        "object_repr": "Watch",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+        "action_time": "2021-06-09T16:17:07.099Z",
+        "user": [
+            "shubham"
+        ],
+        "content_type": [
+            "App",
+            "category"
+        ],
+        "object_id": "2",
+        "object_repr": "Car",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+        "action_time": "2021-06-09T16:17:24.779Z",
+        "user": [
+            "shubham"
+        ],
+        "content_type": [
+            "App",
+            "category"
+        ],
+        "object_id": "3",
+        "object_repr": "Food",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+        "action_time": "2021-06-09T16:17:47.754Z",
+        "user": [
+            "shubham"
+        ],
+        "content_type": [
+            "App",
+            "category"
+        ],
+        "object_id": "4",
+        "object_repr": "Shoes",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+        "action_time": "2021-06-09T16:18:11.373Z",
+        "user": [
+            "shubham"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "2",
+        "object_repr": "sarthak31",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 18,
+    "fields": {
+        "action_time": "2021-06-09T16:18:35.181Z",
+        "user": [
+            "shubham"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "3",
+        "object_repr": "danish6",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 19,
+    "fields": {
+        "action_time": "2021-06-09T16:19:33.945Z",
+        "user": [
+            "shubham"
+        ],
+        "content_type": [
+            "App",
+            "post"
+        ],
+        "object_id": "1",
+        "object_repr": "Titan",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 20,
+    "fields": {
+        "action_time": "2021-06-09T16:20:18.862Z",
+        "user": [
+            "shubham"
+        ],
+        "content_type": [
+            "App",
+            "post"
+        ],
+        "object_id": "2",
+        "object_repr": "DUcati",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 21,
+    "fields": {
+        "action_time": "2021-06-09T16:21:01.141Z",
+        "user": [
+            "shubham"
+        ],
+        "content_type": [
+            "App",
+            "post"
+        ],
+        "object_id": "3",
+        "object_repr": "Lakhani",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 22,
+    "fields": {
+        "action_time": "2021-06-09T16:21:11.337Z",
+        "user": [
+            "shubham"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "3",
+        "object_repr": "danish26",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Username\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 23,
+    "fields": {
+        "action_time": "2021-06-09T16:21:48.686Z",
+        "user": [
+            "shubham"
+        ],
+        "content_type": [
+            "App",
+            "post"
+        ],
+        "object_id": "4",
+        "object_repr": "Fast Food",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 24,
+    "fields": {
+        "action_time": "2021-06-09T16:22:23.979Z",
+        "user": [
+            "shubham"
+        ],
+        "content_type": [
+            "App",
+            "post"
+        ],
+        "object_id": "5",
+        "object_repr": "Snacks",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 25,
+    "fields": {
+        "action_time": "2021-06-10T16:19:33.092Z",
+        "user": [
+            "shubham"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "2",
+        "object_repr": "sarthak31",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 26,
+    "fields": {
+        "action_time": "2021-06-10T16:21:14.442Z",
+        "user": [
+            "shubham"
+        ],
+        "content_type": [
+            "App",
+            "post"
+        ],
+        "object_id": "9",
+        "object_repr": "2020",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 27,
+    "fields": {
+        "action_time": "2021-06-10T16:21:28.528Z",
+        "user": [
+            "shubham"
+        ],
+        "content_type": [
+            "App",
+            "post"
+        ],
+        "object_id": "10",
+        "object_repr": "2022",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 28,
+    "fields": {
+        "action_time": "2021-06-10T16:22:48.230Z",
+        "user": [
+            "shubham"
+        ],
+        "content_type": [
+            "App",
+            "post"
+        ],
+        "object_id": "11",
+        "object_repr": "Fast Food",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 29,
+    "fields": {
+        "action_time": "2021-06-10T16:42:52.111Z",
+        "user": [
+            "shubham"
+        ],
+        "content_type": [
+            "App",
+            "description"
+        ],
+        "object_id": "1",
+        "object_repr": "this is sarthak description",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 30,
+    "fields": {
+        "action_time": "2021-06-11T16:08:21.908Z",
+        "user": [
+            "shubham"
+        ],
+        "content_type": [
+            "App",
+            "post"
+        ],
+        "object_id": "24",
+        "object_repr": "hfdfhdfh",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 31,
+    "fields": {
+        "action_time": "2021-06-11T16:09:47.909Z",
+        "user": [
+            "shubham"
+        ],
+        "content_type": [
+            "App",
+            "post"
+        ],
+        "object_id": "25",
+        "object_repr": "msmd",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 32,
+    "fields": {
+        "action_time": "2021-06-12T16:16:10.463Z",
+        "user": [
+            "shubham"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "3",
+        "object_repr": "danish26",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 33,
+    "fields": {
+        "action_time": "2021-06-12T16:16:46.212Z",
+        "user": [
+            "shubham"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "11",
+        "object_repr": "sarthak31",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 34,
+    "fields": {
+        "action_time": "2021-06-12T16:17:13.637Z",
+        "user": [
+            "shubham"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "1",
+        "object_repr": "shubham",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 35,
+    "fields": {
+        "action_time": "2021-06-13T06:36:29.561Z",
+        "user": [
+            "shubham"
+        ],
+        "content_type": [
+            "App",
+            "description"
+        ],
+        "object_id": "5",
+        "object_repr": "This is sarthak jain post",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 36,
+    "fields": {
+        "action_time": "2021-06-13T06:44:11.112Z",
+        "user": [
+            "shubham"
+        ],
+        "content_type": [
+            "App",
+            "description"
+        ],
+        "object_id": "6",
+        "object_repr": "my first post",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "App.post",
+    "pk": 1,
+    "fields": {
+        "category": 1,
+        "title": "Titan",
+        "excerpt": "first",
+        "content": "This is my watch",
+        "author": [
+            "shubham"
+        ]
+    }
+},
+{
+    "model": "App.post",
+    "pk": 5,
+    "fields": {
+        "category": 3,
+        "title": "Snacks",
+        "excerpt": "again",
+        "content": "this is new post",
+        "author": [
+            "shubham"
+        ]
+    }
+},
+{
+    "model": "App.post",
+    "pk": 6,
+    "fields": {
+        "category": 1,
+        "title": "Titan",
+        "excerpt": "first",
+        "content": "This is my watch",
+        "author": [
+            "shubham"
+        ]
+    }
+},
+{
+    "model": "App.post",
+    "pk": 7,
+    "fields": {
+        "category": 3,
+        "title": "Snacks",
+        "excerpt": "again",
+        "content": "this is new post",
+        "author": [
+            "shubham"
+        ]
+    }
+},
+{
+    "model": "App.description",
+    "pk": 6,
+    "fields": {
+        "content": "my first post",
+        "post_desc": [
+            "shubham"
+        ]
+    }
+}
+]

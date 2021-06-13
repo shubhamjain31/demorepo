@@ -33,3 +33,12 @@
       }
     })
 }
+
+$('#db_backup_and_restore').DataTable({
+    "sScrollY": "400px",
+    // "sScrollX": "100%" ,
+    "oLanguage": {
+      "sEmptyTable": "No Data",
+      "sLengthMenu": "_MENU_",
+    },
+});
