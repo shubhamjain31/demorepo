@@ -5,7 +5,7 @@
         "password": "pbkdf2_sha256$216000$npovMElhgAN9$NsIHytAx99ikSS/pdqnpa1G0pciE1OmXsvOKgvNUyU8=",
         "last_login": null,
         "is_superuser": false,
-        "username": "sarthak31",
+        "username": "raj34@gmail.com",
         "first_name": "Sarthak",
         "last_name": "Jain",
         "email": "sarthak31@gmail.com",
@@ -25,7 +25,7 @@
         "excerpt": "wewek",
         "content": "kwkwke",
         "author": [
-            "sarthak31"
+            "raj34@gmail.com"
         ]
     }
 },
@@ -38,7 +38,7 @@
         "excerpt": "four",
         "content": "This is for food lovers",
         "author": [
-            "sarthak31"
+            "raj34@gmail.com"
         ]
     }
 },
@@ -51,7 +51,7 @@
         "excerpt": "dwhdhwhdh",
         "content": "hwewweh",
         "author": [
-            "sarthak31"
+            "raj34@gmail.com"
         ]
     }
 },
@@ -64,7 +64,7 @@
         "excerpt": "dqwddw",
         "content": "ewewe",
         "author": [
-            "sarthak31"
+            "raj34@gmail.com"
         ]
     }
 },
@@ -74,7 +74,7 @@
     "fields": {
         "content": "this is sarthak description",
         "post_desc": [
-            "sarthak31"
+            "raj34@gmail.com"
         ]
     }
 }
