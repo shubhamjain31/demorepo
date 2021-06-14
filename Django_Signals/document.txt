@@ -1,0 +1,19 @@
+################################################### NOTES ########################################################
+
+Signals allow certain senders to notify a set of receivers that some action has taken place.
+
+Actions :
+
+model's save() method is called.
+	django.db.models.signals.pre_save | post_save
+
+model's delete() method is called.
+	django.db.models.signals.pre_delete | post_delete
+
+ManyToManyField on a model is changed.
+	django.db.models.signals.m2m_changed
+
+Django starts or finishes an HTTP request.
+	django.core.signals.request_started | request_finished
+
+All signals are django.dispatch.Signal instances.
