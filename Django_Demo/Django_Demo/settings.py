@@ -30,6 +30,11 @@ ALLOWED_HOSTS = []
 
 FIXTURE_DIRS = (os.path.join(BASE_DIR, 'fixtures'),)
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'custom_authenticate.backends.EmailBackend',
+]
+
 AUTH_USER_MODEL = 'App.User'
 
 # Application definition

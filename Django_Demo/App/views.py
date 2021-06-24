@@ -2,6 +2,7 @@ from django.shortcuts import render
 # from django.contrib.auth.models import User
 from .models import User
 from django.http import HttpResponse, JsonResponse
+from django.contrib.auth import authenticate, login
 
 import sys
 from django.core.management import BaseCommand, call_command
@@ -21,10 +22,14 @@ fake = Faker()
 # ********************************************************** For Management Command *************************************************************
 
 def index(request):
-	sysout = sys.stdout
-	sys.stdout = open('filename.json', 'w')
-	call_command('initdata')
-	sys.stdout = sysout
+
+	user = authenticate(email="sj27754@gmail.com", password="shubham")
+	# login(request, user)
+	print(request.user)
+	# sysout = sys.stdout
+	# sys.stdout = open('filename.json', 'w')
+	# call_command('initdata')
+	# sys.stdout = sysout
 	return HttpResponse('Done')
 
 # ********************************************************** For Autocomplete Search Bar *************************************************************
