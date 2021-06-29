@@ -19,5 +19,6 @@ from django.conf.urls import url
 
 urlpatterns = [
     url(r'^jet/', include('jet.urls', 'jet')), 
+    path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),
     path('admin/', admin.site.urls),
 ]
