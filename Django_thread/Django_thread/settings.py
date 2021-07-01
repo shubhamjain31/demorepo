@@ -55,10 +55,13 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'Django_thread.urls'
 
+
+TEMPLATE_DIR = os.path.join(BASE_DIR, "App/templates")  # ROOT dir for templates
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATE_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
