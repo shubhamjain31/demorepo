@@ -2,12 +2,14 @@ from django.shortcuts import render
 from django.http import JsonResponse
 import logging, traceback
 
+logger = logging.getLogger('django')
+
 # Create your views here.
 
 
 def addUser(request):
 	val = {"response": "User Added"}
-	print("Hello adduser")
+	logger.info('>>>>>>>>>>>>>> Something Debug wrong!')
 	return JsonResponse(val, status=200)
 
 def addSomething(request):
