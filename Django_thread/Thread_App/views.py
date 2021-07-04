@@ -12,7 +12,7 @@ from .thread import CreateStudentThread
 def mythread(request):
 	count = 100
 
-	# without threadind
+	# without threading
 	# for i in range(count):
 	# 	print(i)
 	# 	Student_Data.objects.create(
@@ -23,6 +23,6 @@ def mythread(request):
 	# 		)
 
 	# with threading
-	# CreateStudentThread(count).start()
+	CreateStudentThread(count).start()
 
 	return render(request , 'mythread.html' )
