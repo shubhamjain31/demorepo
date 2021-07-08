@@ -15,6 +15,9 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+STATIC_DIR = Path(BASE_DIR / 'static')
+TEMPLATE_DIR = Path(BASE_DIR / 'templates')
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -37,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # 'widget_tweaks',
+    'App'
 ]
 
 MIDDLEWARE = [
@@ -54,7 +59,7 @@ ROOT_URLCONF = 'Django_Security.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATE_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -90,6 +95,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'OPTIONS':{"min_length":12},
     },
     {
         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
@@ -97,8 +103,28 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
+    {
+        'NAME': 'App.validators.ConsecutivelyRepeatingCharacterValidator'
+    },
+    {
+        'NAME': 'App.validators.ConsecutivelyIncreasingIntegerValidator'
+    },
+    {
+        'NAME': 'App.validators.ConsecutivelyDecreasingIntegerValidator'
+    },
+    {
+        'NAME': 'App.validators.ConsecutivelyIncreasingIntegerValidator'
+    },
+    {
+        'NAME': 'App.validators.ConsecutivelyIncreasingAlphabetValidator'
+    },
+    {
+        'NAME': 'App.validators.ConsecutivelyDecreasingAlphabetValidator'
+    },
+    # {
+    #     'NAME': 'App.validators.RepeatingAndSequentialValidator'
+    # }
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
@@ -119,7 +145,22 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS = [
+    STATIC_DIR,
+]
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL = 'app:home'
+LOGOUT_REDIRECT_URL = 'app:index'
+LOGIN_URL = "login"
+
+EMAIL_HOST = "<smtp-server>"
+EMAIL_PORT = 587
+EMAIL_HOST_USER = "<username>"
+EMAIL_HOST_PASSWORD = '<password>'
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = "<test@test.com>"
