@@ -113,7 +113,7 @@
 
       $.ajax({
           type: "POST",
-          url: "{% url 'app:search_employees' %}",
+          url: "{% url 'App:search_employees' %}",
           data: {'searchTerm':searchTerm},
           success: function(response){
             $('#searchOutput').html(response);

@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'widget_tweaks',
+    'widget_tweaks',
     'App'
 ]
 
@@ -78,10 +78,21 @@ WSGI_APPLICATION = 'Django_Security.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': "django_security",
+        'USER': "postgres",
+        'PASSWORD': "root",
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
@@ -154,8 +165,8 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = 'app:home'
-LOGOUT_REDIRECT_URL = 'app:index'
+LOGIN_REDIRECT_URL = 'App:home'
+LOGOUT_REDIRECT_URL = 'App:index'
 LOGIN_URL = "login"
 
 EMAIL_HOST = "<smtp-server>"
@@ -164,3 +175,5 @@ EMAIL_HOST_USER = "<username>"
 EMAIL_HOST_PASSWORD = '<password>'
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = "<test@test.com>"
+
+# executive');DELETE FROM App_employee;--

@@ -1,0 +1,12 @@
+What is SQL Injection?
+SQL injection is a type of attack where a malicious user is able to execute arbitrary SQL code on a database.
+
+In Django:-
+a) We use Django ORM
+b) In-build Queryset APIs
+
+
+Exceptions:
+a) raw()
+b) extra()
+c) direct SQL Queries without Django ORM
