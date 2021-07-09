@@ -21,3 +21,30 @@ class Blog(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class test_employee(models.Model):
+    class Meta:
+        db_table = "test_employee"
+
+    emp_id              = models.IntegerField()
+    first_name          = models.CharField(max_length = 1000)
+    last_name           = models.CharField(max_length = 1000)
+    age                 = models.IntegerField()
+    sex                 = models.CharField(max_length = 100)
+    department          = models.CharField(max_length = 1000)
+    designation         = models.CharField(max_length = 1000)
+
+    def __str__(self):
+        return self.first_name
+
+class test_blog(models.Model):
+    class Meta:
+        db_table = "test_blog"
+
+    name                = models.CharField(max_length = 1000)
+    author              = models.CharField(max_length = 1000)
+    price               = models.CharField(max_length = 1000)
+
+    def __str__(self):
+        return self.name

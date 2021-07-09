@@ -9,7 +9,7 @@ from django.contrib.auth.decorators import login_required
 from django.db import connection
 import subprocess, shlex
 
-from App.models import Employee, Blog
+from App.models import Employee, Blog, test_employee, test_blog
 from App.forms import BlogForm
 
 # Create your views here.
@@ -48,7 +48,7 @@ def employees(request):
         designation 		= request.POST.get("designation")
 
         # Saving to DB using Django ORM - the best way
-        Employee.objects.create(emp_id = emp_id, 
+        test_employee.objects.create(emp_id = emp_id, 
         						first_name = first_name, 
         						last_name = last_name,
         						age = age,
@@ -59,17 +59,17 @@ def employees(request):
 
         # # Direct SQL Queries - the wrong way
         # cursor = connection.cursor()
-        # query = "INSERT INTO app_employee (emp_id, first_name, last_name, age, sex, department, designation) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s')" % (emp_id, first_name, last_name, age, sex, department, designation)
+        # query = "INSERT INTO test_employee (emp_id, first_name, last_name, age, sex, department, designation) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s')" % (emp_id, first_name, last_name, age, sex, department, designation)
         # cursor.execute(query)
 
         # # Direct SQL Queries - the correct way
         # cursor = connection.cursor()
-        # cursor.execute("INSERT INTO app_employee (emp_id, first_name, last_name, age, sex, department, designation) VALUES (%s, %s, %s, %s, %s, %s, %s)", [emp_id, first_name, last_name, age, sex, department, designation])
+        # cursor.execute("INSERT INTO test_employee (emp_id, first_name, last_name, age, sex, department, designation) VALUES (%s, %s, %s, %s, %s, %s, %s)", [emp_id, first_name, last_name, age, sex, department, designation])
 
         return redirect("App:employees")
     else:
         # Fetch all employees using Django ORM
-        employees = Employee.objects.all()
+        employees = test_employee.objects.all()
 
         return render(request, 'app/employees.html', {"employees":employees})
 
@@ -80,21 +80,20 @@ def search_employees(request):
         search_term = request.POST.get('searchTerm')
 
         # Searching employees using Django ORM - the best way
-        # employees = Employee.objects.filter(first_name__icontains = search_term)
+        employees = test_employee.objects.filter(first_name__icontains = search_term)
 
         # # Searching employees using raw() - the wrong way
-        # query = "SELECT * FROM App_employee WHERE first_name ILIKE '%s';" % search_term
-        # employees = Employee.objects.raw(query)
-        # print(employees)
+        # query = "SELECT * FROM test_employee WHERE first_name ILIKE '%s';" % search_term
+        # employees = test_employee.objects.raw(query)
 
         # # Searching employees using raw() - the correct way
-        employees = Employee.objects.raw('SELECT * FROM app_employee WHERE first_name ILIKE %s;',[search_term])
+        # employees = test_employee.objects.raw('SELECT * FROM test_employee WHERE first_name ILIKE %s;',[search_term])
 
         # # Searching employees using extra() - the wrong way
-        # employees = Employee.objects.extra(where=["first_name ILIKE '%s'" % search_term])
+        # employees = test_employee.objects.extra(where=["first_name ILIKE '%s'" % search_term])
 
         # # Searching employees using extra() - the correct way
-        # employees = Employee.objects.extra(where=['first_name ILIKE %s'], params=[search_term])
+        # employees = test_employee.objects.extra(where=['first_name ILIKE %s'], params=[search_term])
 
         html = render_to_string('app/search_employees.html', {'employees':employees})
 
