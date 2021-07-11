@@ -10,3 +10,10 @@ Exceptions:
 a) raw()
 b) extra()
 c) direct SQL Queries without Django ORM
+
+raw() and extra() is used to execute complex queries
+
+Use Django ORM as much as possible
+If using raw(), extra() or Direct SQL Queries
+a) Query Parameterizatin
+b) Do not use single quotes around %s
