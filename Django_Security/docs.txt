@@ -15,5 +15,5 @@ raw() and extra() is used to execute complex queries
 
 Use Django ORM as much as possible
 If using raw(), extra() or Direct SQL Queries
-a) Query Parameterizatin
+a) Query Parameterization
 b) Do not use single quotes around %s
