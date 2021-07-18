@@ -46,8 +46,9 @@
     <div class="col-lg-8 border border-success rounded p-4 m-4 mx-auto">
     	<nav class="mb-2 mt-3">
 	    	<div class="nav nav-tabs" role="tablist" id="nav-tab">
-			  <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Add Books</a>
-			  <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false" onclick="showallBooks();">Show Books</a>
+			  <a class="nav-item nav-link active" id="nav-add-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Add Books</a>
+			  <a class="nav-item nav-link" id="nav-show-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false" onclick="showallBooks();">Show Books</a>
+			  <a class="nav-item nav-link" id="nav-update-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false" onclick="updateBook();">Update Books</a>
 			</div>
 		</nav>
 		<div class="tab-content" id="nav-tabContact">
@@ -73,6 +74,9 @@
 			</div>
 			<div class="tab-pane fade text-center" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
 				<h1 class="alert alert-secondary">Show Book Table</h1>
+			</div>
+			<div class="tab-pane fade text-center" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+				<h1 class="alert alert-secondary">Update Book Table</h1>
 			</div>
 		</div>
     </div>

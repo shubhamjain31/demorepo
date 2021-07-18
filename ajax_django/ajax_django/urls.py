@@ -23,6 +23,7 @@ urlpatterns = [
     path('save_book/',views.save_book,name='save_book'),
     path('getAllBooks/',views.getAllBooks,name='getAllBooks'),
     path('deletebook/',views.deletebook,name='deletebook'),
+    path('updatebook/',views.updatebook,name='updatebook'),
     path('signuppage/',views.signuppage,name='signuppage'),
     path('signup/',views.signup,name='signup'),
     path('checkemail/',views.checkemail,name='checkemail'),

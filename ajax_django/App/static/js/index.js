@@ -87,3 +87,71 @@ function showallBooks(){
 	  req.open("GET", url, true);
 	  req.send();
 }
+
+function updateBook(){
+	var url = '/getAllBooks';
+	var req = new XMLHttpRequest();
+	  req.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+	    	var data = eval(req.responseText);      //convert in object
+	    	var div = document.getElementById("nav-profile");
+	    	div.innerHTML = "";
+	    	var table = document.createElement('Table');
+	    	var row = table.insertRow(0);
+    		var name = row.insertCell(0);
+    		var prize = row.insertCell(1);
+    		var pages = row.insertCell(2);
+    		var clicktodelete = row.insertCell(3);
+    		
+    		name.innerHTML = "<b>Book Name</b>";
+    		prize.innerHTML = "<b>Book Prize</b>";
+    		pages.innerHTML = "<b>Number Of Pages</b>";
+    		clicktodelete.innerHTML = "<b>Click to Update</b>";
+    	
+	    	for(var i=0;i<data.length;i++){
+	    		var row = table.insertRow(i+1);
+	    		var name = row.insertCell(0);
+	    		var prize = row.insertCell(1);
+	    		var pages = row.insertCell(2);
+	    		var updatebook = row.insertCell(3);
+
+	    		var _id = data[i].id;
+	    		
+	    		name.innerHTML = "<input class='form-control' id='bookname"+_id+"' value="+data[i].name+">";
+	    		prize.innerHTML = "<input class='form-control' id='bookprize"+_id+"' value="+data[i].prize+">";
+	    		pages.innerHTML = "<input class='form-control' id='bookpages"+_id+"' value="+data[i].pages+">";
+	    		updatebook.innerHTML = "<button class='btn btn-success btn-sm'>Update</b>";
+	    		updatebook.className = "text-danger text-center"
+	    		updatebook.style.fontSize = '20px';
+	    		updatebook.style.cursor = 'pointer';
+	    		updatebook.id = data[i].id;
+	    		updatebook.className = 'updateButton';
+	    		
+	    		updatebook.onclick = function(){
+	    			var obj = this;
+	    			var id = this.id;
+
+	    			var name = document.getElementById("bookname"+id+"").value;
+					var prize = document.getElementById("bookprize"+id+"").value;
+					var pages = document.getElementById("bookpages"+id+"").value;
+
+	    			var url = '/updatebook?id='+id+'&name='+name+'&prize='+prize+'&pages='+pages;
+	    			var req = new XMLHttpRequest();
+					  req.onreadystatechange = function() {
+					    if (this.readyState == 4 && this.status == 200) {
+				    	     if(req.responseText == 'Updated Successfully'){
+				    	     	
+				    	     }
+					    }
+					  };
+					  req.open("GET", url, true);
+					  req.send();
+	    		}
+	    	}
+	    	table.className = 'table text-center table-striped';
+	    	div.appendChild(table);
+	    }
+	  };
+	  req.open("GET", url, true);
+	  req.send();
+}

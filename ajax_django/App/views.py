@@ -9,9 +9,10 @@ def index(request):
 	return render(request,'index.html')
 
 def save_book(request):
-	name  = request.GET['name']
-	prize  = request.GET['prize']
-	pages  = request.GET['pages']
+	name  		= request.GET['name']
+	prize  		= request.GET['prize']
+	pages  		= request.GET['pages']
+
 	book = Book(name=name, prize=prize, pages=pages)
 	try:
 		book.save()
@@ -22,6 +23,7 @@ def save_book(request):
 def getAllBooks(request):
 	l = list()
 	books = Book.objects.all()
+
 	for b in books:
 		serializer = BookSerializer(b)
 		l.append(serializer.data)
@@ -29,10 +31,26 @@ def getAllBooks(request):
 
 def deletebook(request):
 	try:
-		bookid = request.GET['id']
-		book = Book.objects.get(id=bookid)
+		bookid 		= request.GET['id']
+		book 		= Book.objects.get(id=bookid)
 		book.delete()
 		return HttpResponse('Delete Successfully')
+	except:
+		return HttpResponse('Error')
+
+def updatebook(request):
+	_id 		= request.GET['id']
+	name  		= request.GET['name']
+	prize  		= request.GET['prize']
+	pages 		= request.GET['pages']
+
+	book = Book.objects.get(pk=_id)
+	try:
+		book.name  	= name
+		book.prize  = prize
+		book.pages  = pages
+		book.save()
+		return HttpResponse('Updated Successfully')
 	except:
 		return HttpResponse('Error')
 
@@ -40,9 +58,10 @@ def signuppage(request):
 	return  render(request,'signuppage.html')
 
 def signup(request):
-	name = request.GET['name']
-	email = request.GET['email']
-	password = request.GET['password']
+	name 		= request.GET['name']
+	email 		= request.GET['email']
+	password 	= request.GET['password']
+
 	user = User(name=name, email=email, password=password)
 	user.save()
 	return HttpResponse('Saved Successfully')
