@@ -21,5 +21,11 @@ from App import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('book/list/', views.book_list, name='book_list'),
-    path('book/list/select_related/', views.book_list_select_related, name='book_list_select_related')
+    path('book/list/select_related/', views.book_list_select_related, name='book_list_select_related'),
+
+    path('store/list/', views.store_list, name='store_list'),
+    path('store/list/prefetch_related/', views.store_list_prefetch_related, name='store_list_prefetch_related'),
+    path('store/list/expensive_books_prefetch_related/', views.store_list_expensive_books_prefetch_related, name='store_list_expensive_books_prefetch_related'),
+    path('store/list/expensive_books_prefetch_related_efficient/', views.store_list_expensive_books_prefetch_related_efficient, name='store_list_expensive_books_prefetch_related_efficient'),
+
 ]
