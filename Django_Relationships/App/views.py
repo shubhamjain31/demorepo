@@ -86,3 +86,17 @@ def store_list_expensive_books_prefetch_related_efficient(request):
         stores.append({'id': store.id, 'name': store.name, 'books': books})
 
     return render(request, 'index.html', {'stores':stores})
+
+
+# --------------------------------------------------@ One-to-one @-----------------------------------------------
+
+@query_debugger
+def person_list(request):
+    queryset = Adhar.objects.select_related('person').all()
+
+    persons = []
+    for person in queryset:
+        persons.append({"id":person.id, "name":person.person.name, "email":person.person.email, "mobile":person.person.mobile, "signature":person.signature,
+                        "adhar":person.adhar_no})
+
+    return render(request, 'index.html', {'persons':persons})

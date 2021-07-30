@@ -7,3 +7,5 @@ from App.models import *
 admin.site.register(Publisher)
 admin.site.register(Book)
 admin.site.register(Store)
+admin.site.register(Person)
+admin.site.register(Adhar)

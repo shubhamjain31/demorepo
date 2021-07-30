@@ -28,4 +28,6 @@ urlpatterns = [
     path('store/list/expensive_books_prefetch_related/', views.store_list_expensive_books_prefetch_related, name='store_list_expensive_books_prefetch_related'),
     path('store/list/expensive_books_prefetch_related_efficient/', views.store_list_expensive_books_prefetch_related_efficient, name='store_list_expensive_books_prefetch_related_efficient'),
 
+    path('person/list/', views.person_list, name='person_list'),
+
 ]

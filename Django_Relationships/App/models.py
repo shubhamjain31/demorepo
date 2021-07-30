@@ -28,3 +28,20 @@ class Store(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Person(models.Model):
+    name = models.TextField(max_length=100)
+    email = models.EmailField()
+    mobile = models.TextField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+class Adhar(models.Model):
+    person = models.OneToOneField("Person",on_delete=models.CASCADE)
+    signature = models.TextField()
+    adhar_no = models.TextField(max_length=100)
+
+    def __str__(self):
+        return str(self.person)

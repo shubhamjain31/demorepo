@@ -21,7 +21,7 @@
         <tr>
           <th scope="col">Sr No.</th>
           <th scope="col">Book Name</th>
-          <th scope="col">Book Price(₹))</th>
+          <th scope="col">Book Price(₹)</th>
           <th scope="col">Publisher Name</th>
         </tr>
       </thead>
@@ -36,7 +36,7 @@
         {% endfor %}
       </tbody>
     </table>
-    {% else %}
+    {% elif stores %}
     <table class="table">
       <thead class="text-center">
         <tr>
@@ -53,6 +53,31 @@
           <td>{{ store.name }}</td>
           <td>{{ store.books|get_list_value }}</td>
           <!-- <td>{{ store.publisher }}</td> -->
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <table class="table">
+      <thead class="text-center">
+        <tr>
+          <th scope="col">Sr No.</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Mobile</th>
+          <th scope="col">Signature</th>
+          <th scope="col">Adhar Number</th>
+        </tr>
+      </thead>
+      <tbody class="text-center">
+        {% for person in persons %}
+        <tr>
+          <th scope="row">{{ forloop.counter }}</th>
+          <td>{{ person.name }}</td>
+          <td>{{ person.email }}</td>
+          <td>{{ person.mobile }}</td>
+          <td>{{ person.signature }}</td>
+          <td>{{ person.adhar }}</td>
         </tr>
         {% endfor %}
       </tbody>
