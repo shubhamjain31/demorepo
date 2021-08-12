@@ -64,7 +64,7 @@ class Courses(models.Model):
 	students 		= models.ManyToManyField(Student, related_name ='student_courses')
 
 	def __str__(self):
-	    return self.name
+	    return self.course_name
 
 	class Meta:
 	    db_table = 'courses'

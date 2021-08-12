@@ -29,12 +29,27 @@ def add_teacher(request):
 	return HttpResponse('<h1>Teacher Added</h1>')
 
 def add_classroom(request):
-	# classroom = Classroom.objects.create(student="Suniel Singh",
-	# 									teacher=)
+	students	 = Student.objects.all()
+	teachers	 = Teacher.objects.all()
+
+	classroom = Classroom.objects.create(student=students[2],
+										teacher=teachers[1])
 	return HttpResponse('<h1>Classroom Added</h1>')
 
 def add_courses(request):
-	return HttpResponse('Done')
+	students	 = Student.objects.all()
+
+	course = Courses.objects.create(course_code="Course-CS",
+									course_name="BCA",
+									duration="1")
+
+	course.students.add(students[1],students[0],students[2])
+	return HttpResponse('<h1>Course Added</h1>')
 
 def add_grade(request):
-	return HttpResponse('Done')
+	students	 = Student.objects.all()
+
+	grade = Grade.objects.create(student=students[0],
+								 course="BCS",
+								 grade=3)
+	return HttpResponse('<h1>Grade Added</h1>')
