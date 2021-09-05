@@ -53,3 +53,54 @@ def add_grade(request):
 								 course="BCS",
 								 grade=3)
 	return HttpResponse('<h1>Grade Added</h1>')
+
+def edit_student(request, id):
+	student = Student.objects.get(pk=id)
+
+	student.first_name 	= 'Abhay'
+	student.last_name 	= 'Sharma'
+	student.age 		= '28'
+	student.email 		= 'abhay61@gmail.com'
+	student.mobile 		= '9238238291'
+	student.website 	= 'http://www.hero.com/'
+	student.section 	= 'A'
+
+	student.save()
+	return HttpResponse('<h1>Student Updated</h1>')
+
+def edit_teacher(request, id):
+	user = User.objects.get(username="ram01")
+
+	teacher = Teacher.objects.get(pk=id)
+
+	teacher.name = "Manoj Rai"
+	teacher.user = user
+
+	teacher.save()
+
+	return HttpResponse('<h1>Teacher Updated</h1>')
+
+def edit_classroom(request, id):
+	students	 = Student.objects.all()
+	teachers	 = Teacher.objects.all()
+
+	classroom = Classroom.objects.get(pk=id)
+
+	classroom.student = students[2]
+	classroom.teacher = teachers[1]
+
+	classroom.save()
+	return HttpResponse('<h1>Classroom Updated</h1>')
+
+def edit_courses(request, val):
+	students	 = Student.objects.all()
+
+	course = Courses.objects.get(pk=val)
+
+	# course.course_code 	= "Course-LAW"
+	course.course 		= "Law"
+	course.duration 	= "5"
+	# course.students.add()
+
+	course.save()
+	return HttpResponse('<h1>Course Updated</h1>')

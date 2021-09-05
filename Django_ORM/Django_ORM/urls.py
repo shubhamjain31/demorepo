@@ -28,4 +28,9 @@ urlpatterns = [
     path('add/courses/', add_courses, name='add_courses'),
     path('add/grade/', add_grade, name='add_grade'),
 
+    path('edit/student/<int:id>', edit_student, name='edit_student'),
+    path('edit/teacher/<int:id>', edit_teacher, name='edit_teacher'),
+    path('edit/classroom/<int:id>', edit_classroom, name='edit_classroom'),
+    path('edit/courses/<str:val>', edit_courses, name='edit_courses'),
+
 ]
