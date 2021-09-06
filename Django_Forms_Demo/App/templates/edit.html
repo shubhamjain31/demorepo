@@ -15,6 +15,15 @@
   <h3>Update Details</h3>  
   </div>  
    </div>  
+  {% if form.errors %}
+                <div class="alert alert-warning" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  <div>{{ form.role.errors.as_text }}</div>
+                  
+                </div>
+  {% endif %}
   <div class="form-group row">  
   <label class="col-sm-2 col-form-label">Employee Id:</label>  
   <div class="col-sm-4">  
@@ -37,6 +46,12 @@
   <label class="col-sm-2 col-form-label">Employee Contact:</label>  
   <div class="col-sm-4">  
    <input type="text" class="form-control" name="contact" id="id_contact" required maxlength="15" value="{{ employee.contact }}" />  
+  </div>  
+   </div>  
+   <div class="form-group row">  
+  <label class="col-sm-2 col-form-label">Employee Role:</label>  
+  <div class="col-sm-4">  
+   <input type="text" class="form-control" name="role" id="id_role" required value="{{ employee.role }}" />  
   </div>  
    </div>  
   <div class="form-group row">  

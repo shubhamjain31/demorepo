@@ -31,11 +31,29 @@ class EmployeeForm(forms.ModelForm):
         }
     ))
 
+    role = forms.CharField(error_messages={
+        'required'              : 'Please Enter Role',
+    },
+    widget=forms.TextInput(
+        attrs={
+            "placeholder"       : "Role",
+            "value"             : "",                
+            "class"             : "form-control form-control-alternative"
+        }
+    ))
+
     class Meta:  
         model   = Employee 
 
-        fields  = ['name', 'contact', 'email']
+        fields  = ['name', 'contact', 'email', 'role']
 
     def clean_name(self, *args, **kwargs):
         name = self.cleaned_data.get("name").title()
         return name
+
+    def clean_role(self, *args, **kwargs):
+        role = self.cleaned_data.get("role")
+        if role == 'None':
+            raise forms.ValidationError("Please Enter Role")
+        else:
+            return role

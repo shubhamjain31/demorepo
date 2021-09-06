@@ -33,7 +33,9 @@ def update(request, id):
 
     if form.is_valid():  
         form.save()  
-        return redirect("/") 
+        return redirect("/")
+    else:
+        return render(request, 'edit.html', {'employee': employee, 'form':form})
 
     return render(request, 'edit.html', {'employee': employee})
 
