@@ -55,6 +55,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'Django_with_Stripe_Payment_Gateway.urls'
 
+# custom authentication
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'Django_with_Stripe_Payment_Gateway.backends.UsernameOrEmailAuthBackend'
+]
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
