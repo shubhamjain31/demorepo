@@ -1,5 +1,14 @@
 {% extends "base.html" %}
 
+{% block style %}
+<style>
+    .img-fluid {
+        width:100%;
+        height: 230px;
+    }
+</style>
+{% endblock %}
+
 {% block content %}
 
     <div class="container mt-4">
@@ -8,7 +17,7 @@
 
             <div class="col-lg-4 mt-3">
                 <div class="card shadow">
-                    <img src="/media/{{c.course_image}}" class="card-img-top" alt="...">
+                    <img src="/media/{{c.course_image}}" class="card-img-top img-fluid" alt="...">
                     <div class="card-body">
                         {% if c.is_premium %}
                         <span class="badge badge-success">Premium</span>

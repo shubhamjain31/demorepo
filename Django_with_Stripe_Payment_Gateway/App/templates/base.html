@@ -6,8 +6,9 @@
     <title>{% block title %}{% endblock %}</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
-{% block css %}{% endblock %}
+{% block style %}{% endblock %}
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-lg p-4">
@@ -19,7 +20,7 @@
         <div class="collapse navbar-collapse" id="navbarColor01">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">About</a>
@@ -35,9 +36,9 @@
             {% endif %}
 
             {% if request.session.profile %}
-            <a href="" class="btn btn-info">Pro Member</a>
+            <a href="{% url 'become_pro' %}" class="btn btn-info">Pro Member</a>
             {% else %}
-            <a href="" class="btn btn-secondary">Become Pro</a>
+            <a href="{% url 'become_pro' %}" class="btn btn-secondary">Become Pro</a>
             {% endif %}
             
 
