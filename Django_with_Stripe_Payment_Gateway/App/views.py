@@ -87,19 +87,19 @@ def become_pro(request):
         amount = 1000
         if membership == 'YEARLY':
             amount = 11000
-        stripe.api_key = 'sk_test_qu7ivgHp9WRHlHJjs2QHugIA00hKFbC5qc'
+        stripe.api_key = settings.STRIPE_SECRET_KEY
 
         customer = stripe.Customer.create(
-            email = "abhijeetg40@gmail.com",
-            name=request.user.username,
-            source=request.POST['stripeToken']
+            email       = "sj27754@gmail.com",
+            name        = request.user.username,
+            source      = request.POST['stripeToken']
             )
             
         charge = stripe.Charge.create(
-            customer=customer,
-            amount=amount*100,
-            currency='inr',
-            description="Membership",   
+            customer        = customer,
+            amount          = amount*100,
+            currency        = 'inr',
+            description     ="Membership",   
         )
         
         print(charge['amount'])
@@ -122,7 +122,7 @@ def become_pro(request):
         print(charge)
         return redirect('/charge/')
    
-    return render(request, 'become_pro.html')
+    return render(request, 'become_pro.html', {"publishable_key":settings.STRIPE_PUBLISHABLE_KEY})
 
 def charge(request):
     return render(request, 'charge.html')

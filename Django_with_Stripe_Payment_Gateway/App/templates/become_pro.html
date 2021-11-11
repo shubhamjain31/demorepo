@@ -83,8 +83,8 @@
 
 <script>
     // Create a Stripe client.
-    var stripe = Stripe('pk_test_tI68XHn4booBNFoJfdg6D0l300xpqKUGfw');
-
+    var stripe = Stripe('{{publishable_key}}');
+    
     // Create an instance of Elements.
     var elements = stripe.elements();
 
@@ -154,9 +154,6 @@
         form.submit();
     }
 </script>
-
-
-
 
 
 {% endblock %}
