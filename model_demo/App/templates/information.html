@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://unpkg.com/file-upload-with-preview@4.1.0/dist/file-upload-with-preview.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/file-upload-with-preview@4.1.0/dist/file-upload-with-preview.min.css"/>
+
+    <title>Multiple Images</title>
+  </head>
+  <body>
+    <div class="container mt-5 pt-5">
+        <div class="text-center">
+            <h2>
+                Create Informations
+            </h2>
+        </div>
+
+        <form method="post" action="/information/" id="myUniqueUploadId">{% csrf_token %}
+            <div class="form-group">
+                <label for="information_name">Information Name</label>
+                <input type="text" class="form-control" id="information_name" name="information_name" placeholder="Enter Information" required>
+              </div>
+
+            <div class="row  mt-4">
+                <div class="form-group col-md-8">
+                    <label for="skills">Add Skills</label>
+                    <input type="text" class="form-control" id="skills" name="skills" placeholder="Enter Skills" required>
+                  </div>
+
+                <div class="form-group col-md-4">
+                    <button type="button" class="btn btn-primary  mt-4" onclick="addInputForSkills()">Add</button>
+                </div>
+            </div>
+
+            <div id="skill_row"></div>
+
+            <div class="custom-file-container" data-upload-id="myUniqueUploadId">
+                <label
+                    >Upload File
+                    <a
+                        href="javascript:void(0)"
+                        class="custom-file-container__image-clear"
+                        title="Clear Image"
+                        >&times;</a
+                    ></label
+                >
+                <label class="custom-file-container__custom-file">
+                    <input
+                        type="file"
+                        class="custom-file-container__custom-file__custom-file-input"
+                        accept="*"
+                        multiple
+                        aria-label="Choose File" name="images"
+                    />
+                    <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
+                    <span
+                        class="custom-file-container__custom-file__custom-file-control"
+                    ></span>
+                </label>
+                <div class="custom-file-container__image-preview"></div>
+            </div>
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+
+    </div>
+
+    <script>
+        var upload = new FileUploadWithPreview("myUniqueUploadId");
+        var current_skills = 0;
+
+        function addInputForSkills(){
+            var element = document.getElementById('skill_row');
+            var html = `<div class="row mt-3" id="current_skills-${current_skills}"><div class="form-group col-md-8">
+                            <label for="skills">Add Skills</label>
+                            <input type="text" class="form-control" id="skills" name="skills" placeholder="Enter Skills" required>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <button type="button" class="btn btn-danger  mt-4" onclick="removeInputForSkills(${current_skills})">Remove</button>
+                        </div></div>`
+            element.innerHTML += html;
+            current_skills += 1;
+        }
+
+        function removeInputForSkills(id){
+            var element = document.getElementById(`current_skills-${id}`);
+            element.remove();
+        }
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
