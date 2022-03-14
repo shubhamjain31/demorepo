@@ -20,7 +20,7 @@
             </h2>
         </div>
 
-        <form method="post" action="/information/" id="myUniqueUploadId">{% csrf_token %}
+        <form method="post" action="/information/" enctype="multipart/form-data" id="myUniqueUploadId">{% csrf_token %}
             <div class="form-group">
                 <label for="information_name">Information Name</label>
                 <input type="text" class="form-control" id="information_name" name="information_name" placeholder="Enter Information" required>

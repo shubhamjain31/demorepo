@@ -1,4 +1,5 @@
 from distutils.command.upload import upload
+import json
 from django.db import models
 
 # Create your models here.
@@ -23,6 +24,11 @@ class Informations(models.Model):
 
     def __str__(self):
         return self.information_name
+
+    def get_skills(self):
+        if self.json_text_field == "[]":
+            return []
+        return json.loads(self.json_text_field)
 
 class Images(models.Model):
     information         = models.ForeignKey(Informations, on_delete=models.CASCADE)

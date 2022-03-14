@@ -24,7 +24,8 @@ from App import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
-    path('information/', views.information, name='information')
+    path('information/', views.information, name='information'),
+    path('show_info/<int:id>', views.show_info, name='show_info')
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
