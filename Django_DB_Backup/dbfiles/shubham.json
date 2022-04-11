@@ -3,7 +3,7 @@
     "model": "auth.user",
     "fields": {
         "password": "pbkdf2_sha256$216000$4T8V8kpWVuyP$s9h+suA0sWPWTP4snZ/M1g9peDzBSXQIX7LqJxA6WLE=",
-        "last_login": "2021-06-13T06:31:44.915Z",
+        "last_login": "2021-06-14T13:13:12.652Z",
         "is_superuser": true,
         "username": "shubham",
         "first_name": "Shubham",
@@ -662,6 +662,42 @@
         "object_repr": "my first post",
         "action_flag": 1,
         "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 37,
+    "fields": {
+        "action_time": "2021-06-14T13:49:48.974Z",
+        "user": [
+            "shubham"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "11",
+        "object_repr": "raj34@gmail.com",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Username\", \"First name\", \"Last name\", \"Email address\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 38,
+    "fields": {
+        "action_time": "2021-06-14T13:53:03.436Z",
+        "user": [
+            "shubham"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "11",
+        "object_repr": "sarthak31",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Username\"]}}]"
     }
 },
 {
