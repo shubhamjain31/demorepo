@@ -9,3 +9,6 @@ class MyModelsAdmin(admin.ModelAdmin):
 admin.site.register(MyModel, MyModelsAdmin)
 admin.site.register(Informations)
 admin.site.register(Images)
+admin.site.register(Quiz)
+admin.site.register(Option)
+admin.site.register(Question)

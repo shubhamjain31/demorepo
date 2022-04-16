@@ -52,3 +52,51 @@ def show_info(request, id):
         print(e)
 
     return render(request, 'show_information.html', context)
+
+
+# ================================================================================ @Practice@ =============================================================================
+from django.http import HttpResponse
+from django.db.models import Sum, Avg, Min, Max
+from django.db.models import IntegerField
+from django.db.models.functions import Cast
+from django.db import connection
+from django.db import reset_queries
+
+
+def database_debug(func):
+    def inner_func(*args, **kwargs):
+        reset_queries()
+        results = func()
+        query_info = connection.queries
+        print('function_name: {}'.format(func.__name__))
+        print('query_count: {}'.format(len(query_info)))
+        queries = ['{}\n'.format(query['sql']) for query in query_info]
+        print('queries: \n{}'.format(''.join(queries)))
+        return results
+    return inner_func
+
+def quiz_(request):
+
+    # fee_count           = Quiz.objects.aggregate(Sum('fee'))
+    # discount_count      = Quiz.objects.annotate(discount_int=Cast('discount', IntegerField())).aggregate(Sum('discount_int'))
+    # discount_avg        = Quiz.objects.annotate(discount_int=Cast('discount', IntegerField())).aggregate(Avg('discount_int'))
+    # obj                 = Quiz.objects.values()
+
+    # quiz_by_language    = Question.objects.values('quiz__name').annotate(Sum('id'))
+    # aa                  = Question.objects.select_related('quiz').get(pk=1).quiz.name
+
+    # all_questions         = Question.objects.select_related('quiz')
+
+    # for ques in all_questions:
+    #     print(ques.quiz.name)
+    # all_questions         = Question.objects.all().prefetch_related('options')
+    without_prefetching()
+    return HttpResponse('<h1>Success</h1>')
+
+@database_debug
+def without_prefetching():
+    # questions = Question.objects.all()
+    # questions = Question.objects.select_related('quiz').all()
+
+    questions = Question.objects.prefetch_related('quiz').all()
+    return [question.quiz.name for question in questions]
