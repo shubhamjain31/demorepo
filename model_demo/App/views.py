@@ -60,6 +60,7 @@ from django.db.models import Sum, Avg, Min, Max
 from django.db.models import IntegerField
 from django.db.models.functions import Cast
 from django.db import connection
+from django.db.models import Prefetch
 from django.db import reset_queries
 
 
@@ -90,7 +91,7 @@ def quiz_(request):
     # for ques in all_questions:
     #     print(ques.quiz.name)
     # all_questions         = Question.objects.all().prefetch_related('options')
-    without_prefetching()
+    with_prefetch_related_advanced()
     return HttpResponse('<h1>Success</h1>')
 
 @database_debug
@@ -100,3 +101,19 @@ def without_prefetching():
 
     questions = Question.objects.prefetch_related('quiz').all()
     return [question.quiz.name for question in questions]
+
+@database_debug
+def with_prefetch_related_advanced():
+    # not optimize
+    quizzes = Quiz.objects.prefetch_related('questions')
+    objective_questions_count = {}
+    for quiz in quizzes:
+        objective_questions_count[quiz.name] = quiz.questions.filter(question_type=Question.OBJECTIVE).count()
+    
+
+    # optimize
+    quizzes = Quiz.objects.prefetch_related(Prefetch('questions', queryset=Question.objects.filter(question_type=Question.OBJECTIVE)))
+    objective_questions_count = {}
+    for quiz in quizzes:
+        objective_questions_count[quiz.name] = quiz.questions.count()
+    return objective_questions_count
