@@ -33,7 +33,7 @@ def project_detail(request, project_slug):
                 title=title,
                 amount=amount,
                 category=category
-            ).save()
+            )
 
     elif request.method == 'DELETE':
         try:
