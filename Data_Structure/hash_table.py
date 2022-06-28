@@ -7,10 +7,12 @@ with open('data.csv', 'r') as f:
 
 # print(stock_prices)
 
+# Find stock price
 for element in stock_prices:
     if element[0] == '6-Mar':
         print(element[1])
 
+# Process using python dictionary
 stock_prices = {}
 with open('data.csv', 'r') as f:
     for line in f:
@@ -21,7 +23,7 @@ with open('data.csv', 'r') as f:
 print(stock_prices)
 
 
-# ***************************************************************************************************************
+# ********************************************************* Implement Hash Table ***************************************************
 def get_hash(key):
     sum = 0
     for c in key:
@@ -30,7 +32,7 @@ def get_hash(key):
 
 print(get_hash('6-Mar'))
 
-# ***************************************************************************************************************
+# ****************************************************** Implement Hash Table *********************************************************
 class HashTable:
     def __init__(self):
         self.MAX = 100

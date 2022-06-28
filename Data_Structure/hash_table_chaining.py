@@ -1,3 +1,4 @@
+# Hash Table Collision Handling Using Chaining
 class HashTable:
     def __init__(self):
         self.MAX = 10
@@ -17,11 +18,9 @@ class HashTable:
 
     def __setitem__(self, key, val):
         h = self.get_hash(key)
-        print(key, val, h)
         found = False
 
         for idx, element in enumerate(self.arr[h]):
-            print(idx,element, self.arr[h][idx])
 
             if len(element) == 2 and element[0] == key:
                 self.arr[h][idx] =(key, val)
@@ -31,8 +30,11 @@ class HashTable:
             self.arr[h].append((key, val))
 
     def __delitem__(self, key):
-        h = self.get_hash(key)
-        self.arr[h] = None
+        arr_index = self.get_hash(key)
+        for index, kv in enumerate(self.arr[arr_index]):
+            if kv[0] == key:
+                print(f"deleting element at index {index}")
+                del self.arr[arr_index][index]
 
 h = HashTable()
 h['6-Mar'] = 5              # set item
@@ -41,5 +43,5 @@ h['8-Mar'] = 3              # set item
 h['9-Mar'] = 45             # set item
 h['17-Mar'] = 2             # set item
 h['20-Mar'] = 59            # set item
-# del h['6-Mar']            # del item
+del h['6-Mar']              # del item
 print(h.arr)                # get item
