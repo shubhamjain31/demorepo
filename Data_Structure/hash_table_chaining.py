@@ -17,6 +17,7 @@ class HashTable:
 
     def __setitem__(self, key, val):
         h = self.get_hash(key)
+        print(key, val, h)
         found = False
 
         for idx, element in enumerate(self.arr[h]):
@@ -35,10 +36,10 @@ class HashTable:
 
 h = HashTable()
 h['6-Mar'] = 5              # set item
-h['6-Mar'] = 52          # set item
-h['8-Mar'] = 3          # set item
-h['9-Mar'] = 45          # set item
-h['17-Mar'] = 2          # set item
-h['20-Mar'] = 59          # set item
-# del h['6-Mar']          # del item
-print(h.arr)       # get item
+h['6-Mar'] = 52             # set item
+h['8-Mar'] = 3              # set item
+h['9-Mar'] = 45             # set item
+h['17-Mar'] = 2             # set item
+h['20-Mar'] = 59            # set item
+# del h['6-Mar']            # del item
+print(h.arr)                # get item
